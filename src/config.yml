@@ -1,0 +1,13 @@
+messages:
+  prefix: "&7[&6Economy&7] "
+  not-player: "&cOnly a player can execute this commande."
+  target-not-online: "&cThis player is not online"
+  not-have-money: "&cYou don't have many money"
+  succes-pay: "&aVous avez envoyer %s a : %p"
+  succes-recive: "&aVous avez recu %s de %p"
+  player-not-find: "&cCe joueur n'existe pas"
+  succes-add-money: "&aVous avez recu %s"
+  succes-remove-money: "&a%p vous a retire %s$"
+  succes-reset-money: "&aVotre solde a etait remis a 0"
+  succes-add-money-sender: "&aVous avez bien envoyer %s$ a %p"
+  succes-remove-player: "&a%p vous a retirer %s$"

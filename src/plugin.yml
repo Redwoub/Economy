@@ -1,0 +1,17 @@
+name: Economy
+version: 1.0
+author: Redwoub
+website: https://github.com/Redwoub
+main: fr.redwoub.economysystem.Main
+commands:
+  balance:
+    description: Show player balance
+    aliases:
+      - bal
+      - money
+  pay:
+    description: Give money to player
+  eco:
+    description: Admin command
+    permission: economy.eco
+    permission-message: §cYou don't have the permission to execute this commande.
