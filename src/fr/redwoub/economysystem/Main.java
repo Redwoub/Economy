@@ -2,6 +2,9 @@ package fr.redwoub.economysystem;
 
 import fr.redwoub.economysystem.managers.RegisterManager;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
+import org.bukkit.permissions.Permission;
+import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;

@@ -14,11 +14,11 @@ public class MoneyManager {
     private static final Main main = Main.getInstance();
     private static YamlConfiguration file = YamlConfiguration.loadConfiguration(main.getFile());
 
-    public static int getMoney(UUID uuid){
-        return file.getInt(uuid.toString());
+    public static double getMoney(UUID uuid){
+        return file.getDouble(uuid.toString());
     }
 
-    public static void setMoney(UUID uuid, int money){;
+    public static void setMoney(UUID uuid, double money){;
         file.set(uuid.toString(), money);
         try {
             file.save(main.getFile());
@@ -28,7 +28,7 @@ public class MoneyManager {
     }
 
     public static void resetMoney(UUID uuid){
-        file.set(uuid.toString(), 0);
+        file.set(uuid.toString(), 0.0);
         Bukkit.getPlayer(uuid).sendMessage(main.prefix + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.succes-reset-money")));
         try {
             file.save(main.getFile());
@@ -37,8 +37,8 @@ public class MoneyManager {
         }
     }
 
-    public static void addMoney(UUID uuid, int money){
-        int moneyAfter = file.getInt(uuid.toString());
+    public static void addMoney(UUID uuid, double money){
+        double moneyAfter = file.getDouble(uuid.toString());
         Player player = Bukkit.getPlayer(uuid);
         file.set(uuid.toString(), moneyAfter + money);
         player.sendMessage(main.prefix + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.succes-add-money")
@@ -51,11 +51,11 @@ public class MoneyManager {
 
     }
 
-    public static void removeMoney(UUID uuid, int money){
-        int moneyAfter = file.getInt(uuid.toString());
-        int moneyE = moneyAfter - money;
-        if(moneyE <= 0) {
-            file.set(uuid.toString(), 0);
+    public static void removeMoney(UUID uuid, double money){
+        double moneyAfter = file.getDouble(uuid.toString());
+        double moneyE = moneyAfter - money;
+        if(moneyE <= 0.0) {
+            file.set(uuid.toString(), 0.0);
             return;
         }
         file.set(uuid.toString(), moneyE);
@@ -67,7 +67,7 @@ public class MoneyManager {
         }
     }
 
-    public static void pay(UUID uuid, UUID target, int money){
+    public static void pay(UUID uuid, UUID target, double money){
         if(getMoney(uuid) < money){
             Bukkit.getPlayer(uuid).sendMessage(main.prefix + "§cErreur §8: " + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.not-have-money")));
             return;

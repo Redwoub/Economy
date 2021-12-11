@@ -85,13 +85,13 @@ public class Economy implements CommandExecutor {
 
                 if(args[1].equalsIgnoreCase("@a")){
                     for(Player players : Bukkit.getOnlinePlayers()){
-                        MoneyManager.addMoney(players.getUniqueId(), Integer.parseInt(args[2]));
+                        MoneyManager.addMoney(players.getUniqueId(), Double.parseDouble(args[2]));
                     }
                 }else if(Bukkit.getPlayer(args[1]) == null){
                     player.sendMessage(main.prefix + "§cErreur §8: " + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.player-not-find")));
                     return false;
                 }else {
-                    MoneyManager.addMoney(Bukkit.getPlayer(args[1]).getUniqueId(), Integer.parseInt(args[2]));
+                    MoneyManager.addMoney(Bukkit.getPlayer(args[1]).getUniqueId(), Double.parseDouble(args[2]));
                     //Bukkit.getPlayer(args[1]).sendMessage(main.prefix + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("succes-remove-money").replace("%p", player.getDisplayName()).replace("%s", args[2])));
                 }
                 break;

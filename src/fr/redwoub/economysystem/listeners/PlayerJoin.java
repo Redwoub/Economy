@@ -19,7 +19,7 @@ public class PlayerJoin implements Listener {
         YamlConfiguration file = YamlConfiguration.loadConfiguration(main.getFile());
 
         if(file.getString(player.getUniqueId().toString()) == null){
-            file.set(player.getUniqueId().toString(), 0);
+            file.set(player.getUniqueId().toString(), 0.0);
             try {
                 file.save(main.getFile());
             } catch (IOException e) {

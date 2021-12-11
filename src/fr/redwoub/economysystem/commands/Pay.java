@@ -35,7 +35,7 @@ public class Pay implements CommandExecutor {
             return false;
         }
 
-        MoneyManager.pay(player.getUniqueId(), target.getUniqueId(), Integer.parseInt(args[1]));
+        MoneyManager.pay(player.getUniqueId(), target.getUniqueId(), Double.parseDouble(args[1]));
         player.sendMessage(main.prefix + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.succes-pay").replace("%s", args[1])).replace("%p", target.getDisplayName()));
         target.sendMessage(main.prefix + ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("messages.succes-recive").replace("%s", args[1])).replace("%p", player.getDisplayName()));
         return false;
